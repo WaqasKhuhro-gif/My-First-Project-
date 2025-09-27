@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Islamic Studies Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .quiz-container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .question {
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: #2c3e50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #34495e;
+    }
+    #result {
+      text-align: center;
+      font-size: 18px;
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Islamic Studies Quiz</h1>
+  <div class="quiz-container">
+    <form id="quizForm">
+
+      <div class="question">1. Who was the first Prophet of Islam?</div>
+      <div class="options">
+        <label><input type="radio" name="q1" value="wrong"> Prophet Muhammad (PBUH)</label>
+        <label><input type="radio" name="q1" value="wrong"> Prophet Musa (A.S.)</label>
+        <label><input type="radio" name="q1" value="correct"> Prophet Adam (A.S.)</label>
+        <label><input type="radio" name="q1" value="wrong"> Prophet Ibrahim (A.S.)</label>
+      </div>
+
+      <div class="question">2. How many pillars of Islam are there?</div>
+      <div class="options">
+        <label><input type="radio" name="q2" value="wrong"> Three</label>
+        <label><input type="radio" name="q2" value="wrong"> Four</label>
+        <label><input type="radio" name="q2" value="correct"> Five</label>
+        <label><input type="radio" name="q2" value="wrong"> Six</label>
+      </div>
+
+      <div class="question">3. Which month is known as the month of fasting in Islam?</div>
+      <div class="options">
+        <label><input type="radio" name="q3" value="wrong"> Muharram</label>
+        <label><input type="radio" name="q3" value="correct"> Ramadan</label>
+        <label><input type="radio" name="q3" value="wrong"> Rabi-ul-Awal</label>
+        <label><input type="radio" name="q3" value="wrong"> Shawwal</label>
+      </div>
+
+      <div class="question">4. How many Surahs are there in the Holy Quran?</div>
+      <div class="options">
+        <label><input type="radio" name="q4" value="wrong"> 110</label>
+        <label><input type="radio" name="q4" value="wrong"> 112</label>
+        <label><input type="radio" name="q4" value="wrong"> 113</label>
+        <label><input type="radio" name="q4" value="correct"> 114</label>
+      </div>
+
+      <div class="question">5. Which city is the birthplace of Prophet Muhammad (PBUH)?</div>
+      <div class="options">
+        <label><input type="radio" name="q5" value="wrong"> Madinah</label>
+        <label><input type="radio" name="q5" value="correct"> Makkah</label>
+        <label><input type="radio" name="q5" value="wrong"> Jerusalem</label>
+        <label><input type="radio" name="q5" value="wrong"> Taif</label>
+      </div>
+
+      <div class="question">6. Which Angel brought revelations to the Prophets?</div>
+      <div class="options">
+        <label><input type="radio" name="q6" value="wrong"> Angel Israfeel</label>
+        <label><input type="radio" name="q6" value="correct"> Angel Jibreel (Gabriel)</label>
+        <label><input type="radio" name="q6" value="wrong"> Angel Mikail</label>
+        <label><input type="radio" name="q6" value="wrong"> Angel Azrael</label>
+      </div>
+
+      <button type="button" onclick="checkAnswers()">Submit</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkAnswers() {
+      let score = 0;
+      const answers = document.querySelectorAll('input[type="radio"]:checked');
+      answers.forEach(ans => {
+        if (ans.value === "correct") {
+          score++;
+        }
+      });
+      document.getElementById("result").innerText = "Your Score: " + score + " / 6";
+    }
+  </script>
+
+</body>
+</html>
